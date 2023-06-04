@@ -1,0 +1,26 @@
+﻿<Window x:Class="firstNoteAttempt.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:firstNoteAttempt"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <ListBox VerticalAlignment="Top" x:Name="notesList" ItemsSource="{Binding}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Header}" FontSize="20"/>
+                        <TextBlock Text="{Binding Content}" FontSize="15"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Bottom" Orientation="Horizontal">
+            <Button Margin="30" Width="100" Height="50" Content="Add" Click="Add_Click"/>
+            <Button Margin="30" Width="100" Height="50" Content="Edit" Click="Edit_Click"/>
+            <Button Margin="30" Width="100" Height="50" Content="Delete" Click="Delete_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
